@@ -1,0 +1,85 @@
+==================================================================
+2 ways of to make a to-do list
+==================================================================
+
+
+sample 1 - USING JQUERY
+==================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>Minha lista de tarefas.</h1>
+<hr />
+<input type="text" placeholder="novo item" />
+<button id="add">Adicione</button>
+<ol id="minha_lista"></ol>
+</body>
+
+<script>
+$(function(){
+	$("#add").on("click", function(){
+		var val = $("input").val();
+		if(val!==""){
+			var elem = $("<li></li>");
+			elem.text(val);
+			$(elem).append("<button class='rem'>X</button>");
+			$("#minha_lista").append(elem);
+			$("input").val("");
+			$(".rem").on("click", function(){
+				$(this).parent().remove();
+			});
+		}
+	});
+});
+
+</script>
+</html>
+
+
+
+
+==================================================================
+SAMPLE 2 - USING PURE JS
+==================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+<h1>Minha lista de tarefas.</h1>
+<hr />
+<input type="text" placeholder="novo item" />
+<button onclick="colocaTarefa()">Adicione</button>
+<ol id="minha_lista"></ol>
+</body>
+
+<script>
+let fonte = document.getElementsByTagName("input");
+let lista = document.getElementById("minha_lista");
+
+
+function colocaTarefa(){
+    if(fonte[0].value!==""){
+        let li = document.createElement("li");
+        li.innerHTML = fonte[0].value;
+        lista.appendChild(li);
+        let btn = document.createElement("button");
+        btn.innerHTML = "x";
+        btn.addEventListener("click", function(){
+            li.remove();
+        });
+        li.appendChild(btn);
+    }
+}
+
+
+</script>
+</html>
