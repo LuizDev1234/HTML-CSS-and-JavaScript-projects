@@ -1,0 +1,81 @@
+=============================================================================
+Sample 1 - CREATING AND CLOSING WINDOWS.
+=============================================================================
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The open() and close() Methods</h2>
+
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="closeWin()">Close "myWindow"</button>
+
+<script>
+let myWindow;
+
+function openWin() {
+myWindow = window.open("", "MsgWindow", "width=200,height=100");
+myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");}
+
+function closeWin() {
+  myWindow.close();
+}
+</script>
+
+</body>
+</html>
+
+=============================================================================
+Sample 2 - TRANSPORTING DATA TO ANOTHER WINDOW.
+=============================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Meu formulário</h1>
+<hr />
+
+<p>Nome: <input type="text" required /><p/>
+<p>Idade: <input type="text" required /><p/>
+
+<button onclick="abreJan()">Abre janela e envia dados.</button>
+<button onclick="fechaJan()">Fecha janela</button>
+
+
+
+<script>
+let janelaNova;
+let dados;
+let nome;
+let idade;
+
+function abreJan() {
+dados = document.getElementsByTagName("input");
+window.sessionStorage.setItem("nome", dados[0].value);
+window.sessionStorage.setItem("idade", dados[1].value);
+nome = window.sessionStorage.getItem("nome");
+idade = window.sessionStorage.getItem("idade");
+
+janelaNova = window.open("", "Minha janela", "width=300,height=200");
+janelaNova.document.write("O nome da pessoa é" + nome + ".");
+janelaNova.document.write(" Ela tem " + idade + " anos de idade.");
+}
+
+function fechaJan() {
+  janelaNova.close();
+}
+</script>
+
+</body>
+</html>
