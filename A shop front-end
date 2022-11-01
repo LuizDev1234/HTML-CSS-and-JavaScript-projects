@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>primeira página</title>
+</head>
+<!-- 1 - Arquitetura do banner, das laterais e do expositor -->
+<body>
+<div id="banner"><i>Fazendo Arte</i></div>
+<div id="left"></div>
+<div id="right"></div>
+<div id="expositor">
+    <!--No lugar das três divs abaixo, coloque as imagens que você quiser.-->
+    <div class="imgexp" id="imagem1"></div>
+    <div class="imgexp" id="imagem2"></div>
+    <div class="imgexp" id="imagem3"></div>
+    <svg>
+        <ellipse id="cama" cx="50%" cy="50%" rx="48%" ry="28%" fill="blue" />
+        <text x="25%" y="50%">Cama</text>
+    </svg>
+    <svg>
+        <ellipse id="mesa" cx="50%" cy="50%" rx="48%" ry="28%" fill="blue" />
+        <text x="25%" y="50%">Mesa</text>
+    </svg>
+    <svg>
+        <ellipse id="banho" cx="50%" cy="50%" rx="48%" ry="28%" fill="blue" />
+        <text x="25%" y="50%">Banho</text>
+    </svg>
+</div>
+<!-- 2 - Arquitetura da galeria e do stand de vendas -->
+<table id="galeria">
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+    <tr>
+        <td><div></div></td>
+        <td><div></div></td>
+    </tr>
+</table>
+<!--Observação: mudar os divs por imgs e definir a src delas.-->
+<div id="standVendas">
+    <table>
+        <tr>
+            <td class="imagem">1A</td>
+            <td class="descricao">produto 1</td>
+        </tr>
+        <tr>
+            <td class="imagem">2A</td>
+            <td class="descricao">produto 2</td>
+        </tr>
+        <tr>
+            <td class="imagem">3A</td>
+            <td class="descricao">produto 3</td>
+        <tr>
+            <td class="imagem">4A</td>
+            <td class="descricao">produto 4</td>
+        </tr>
+        <tr>
+            <td class="imagem">5A</td>
+            <td class="descricao">produto 5</td>
+        </tr>
+        <tr>
+            <td class="imagem">6A</td>
+            <td class="descricao">produto 6</td>
+        <tr>
+            <td class="imagem">7A</td>
+            <td class="descricao">produto 7</td>
+        </tr>
+        <tr>
+            <td class="imagem">8A</td>
+            <td class="descricao">produto 8</td>
+        </tr>
+        <tr>
+            <td class="imagem">9A</td>
+            <td class="descricao">produto 9</td>
+    </table>
+</div>
+<div id="maisProd">
+    <!--Obs: no primeiro td de cada linha da tabela, colocar uma imagem do produto.-->
+<p>Quer ver mais produtos? Clique abaixo num dos botões:</p>
+<button id="ant">Anter</button>
+<button id="prox">Prox</button>
+
+<p>     Itens comprados: 0</p><br />
+<button>Finalizar compra</button>
+</div>
+<style>
+/**************************************/
+/*Configurações de banner e expositor*/
+/**************************************/
+#left {position: fixed; width: 10%; height: 100%; background: lightgreen; left: 0%; top: 0%;}
+#right {position: fixed; width: 10%; height: 100%; background: lightgreen; left: 90%; top: 0%;}
+
+#banner {
+text-align: center;
+font-family: cursive;
+font-size: 250%;
+color: red;
+background: beige;
+width: 80%;
+height: 12%;
+position: absolute;
+top: 0%;
+left: 10%;
+}
+
+#expositor {
+background: lightblue;
+width: 80%;
+height: 65%;
+position: absolute;
+left: 10%;
+top: 12%;
+}
+
+svg {
+width: 10%;
+height: 20%;
+position: relative;
+left: 35%;
+top: 80%;
+}
+
+#imagem1, #imagem2, #imagem3 {
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0%;
+left: 0%;
+}
+
+#imagem1 {background: red; visibility:visible;}
+#imagem2 {background: green; visibility:visible;}
+#imagem3 {background: magenta; visibility:visible;}
+
+/**************************************/
+/*Configurações da galeria*/
+/**************************************/
+body {background: beige;}
+
+#galeria {
+position: absolute;
+top: 77%;
+width: 80%;
+height: 350%;
+left: 10%;
+border-collapse: separate;
+border-spacing: 2px 2px;
+}
+
+#galeria td {
+background: darkblue;
+transition: 1s;
+border: 2px solid black;
+}
+
+#galeria td:active {
+background: red;
+width: 70%;
+height: 20%;
+}
+
+/**************************************/
+/*Configurações do stand de vendas*/
+/**************************************/
+#standVendas {
+top: 427%;
+position: absolute;
+left: 10%;
+height: 30%;
+width: 30%;
+overflow: scroll;
+background: gray;
+float: left;
+margin-right: 5%;
+}
+
+#standVendas table {
+width: 100%;
+height: 300%;
+background: gray;
+border-collapse: separate;
+border-spacing: 1px 1px;
+}
+
+#standVendas td{
+background: yellow;
+}
+
+#standVendas .imagem {
+width:20%;
+}
+
+#standVendas .descricao {
+width:80%;
+}
+
+#maisProd {
+top: 427%;
+position: absolute;
+left: 45%;
+height: 30%;
+width: 45%;
+background: beige;
+}
+    </style>
+
+
+
+    <script>
+/*Esboço da solução das elipses do expositor*/
+let img = document.getElementsByClassName("imgexp");
+
+function mostraImagem(){
+/*Fica a critério do cliente crescentar alguma animação entre as imagens.*/
+let x = event.target.id;
+switch(x) {
+case "cama":
+img[0].style.visibility="visible";
+img[1].style.visibility="hidden";
+img[2].style.visibility="hidden";
+break;
+case "mesa":
+img[0].style.visibility="hidden";
+img[1].style.visibility="visible";
+img[2].style.visibility="hidden";
+break;
+case "banho":
+img[0].style.visibility="hidden";
+img[1].style.visibility="hidden";
+img[2].style.visibility="visible";
+break;
+}	}
+
+let svg = document.getElementsByTagName("svg");
+
+for (let i=0; i<svg.length; i++) {
+svg[i].addEventListener("click", mostraImagem);
+}
+
+/*Fim do esboço*/
+
+/*Esboço da solução do stand de vendas*/
+let passo = 0;
+
+let btn = document.getElementsByTagName("button");
+for (i=0; i<btn.length; i++){
+btn[i].addEventListener("click", mudaProd);
+}
+
+let item = document.getElementsByClassName("imagem");
+let desc = document.getElementsByClassName("descricao");
+let aux;
+
+function mudaProd(){
+    switch(event.target.id){
+        case "ant":
+        passo -= 9;
+        break;
+        case "prox":
+        passo += 9;
+        break;
+    }
+
+if(passo<0){passo=0;}
+
+aux = passo;
+
+for (i=0; i<9; i++){
+    aux += 1;
+    item[i].innerHTML ="A" + aux;
+    desc[i].innerHTML = "produto " + aux;
+}
+}
+/*Fim do esboço*/
+    </script>
+</body>
+</html>
